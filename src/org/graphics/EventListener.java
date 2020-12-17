@@ -9,6 +9,8 @@ import java.util.Random;
 public class EventListener implements GLEventListener {
 
     public static GL2 gl = null;
+    float x = 0.01f;
+    float y = 0.01f;
 
     @Override
     public void init(GLAutoDrawable drawable) {
@@ -28,7 +30,7 @@ public class EventListener implements GLEventListener {
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
         // testing ortho setup
-        Graphics.setColor(0,1,0,1);
+        /*Graphics.setColor(0,1,0,1);
         Graphics.fillRect(-4.5f, 0,1,1);
         Graphics.fillRect(4.5f, 0,1,1);
         Graphics.fillRect(-1, 0,1,1);
@@ -38,7 +40,7 @@ public class EventListener implements GLEventListener {
         Graphics.fillRect(0, 1,1,1);
         Graphics.fillRect(0, -1,1,1);
         Graphics.fillRect(0, 2,1,1);
-        Graphics.fillRect(0, -2,1,1);
+        Graphics.fillRect(0, -2,1,1);*/
 
         // Graphics tester
         /*for (int i = 0; i < 10; i++){
@@ -51,6 +53,16 @@ public class EventListener implements GLEventListener {
             Graphics.fillRect(x,y,width,height);
 
         }*/
+
+        gl.glBegin(GL2.GL_POINTS);
+        for(int i=0;i<1000;++i)
+        {
+            gl.glVertex3f((float)Math.cos(2*Math.PI*i/1000.0),(float) Math.sin(2*Math.PI*i/1000.0),0);
+        }
+        gl.glEnd();
+
+        gl.glTranslatef(x,y,0);
+
 
     }
 
