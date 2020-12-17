@@ -4,6 +4,7 @@ import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.util.FPSAnimator;
+import org.input.KeyInput;
 import org.input.MouseInput;
 
 public class Renderer {
@@ -20,18 +21,20 @@ public class Renderer {
 
         window = GLWindow.create(caps);
         window.setSize(screenWidth, screenHeight);
-        window.setResizable(false);
+
         window.addGLEventListener(new EventListener());
         window.addMouseListener(new MouseInput());
+        window.addKeyListener(new KeyInput());
 
 
 
         FPSAnimator animator = new FPSAnimator(window, 60);
         animator.start();
 
-        window.setFullscreen(true);
+        window.setFullscreen(false);
         window.setVisible(true);
         window.requestFocus();
+        window.setResizable(true);
 
     }
 

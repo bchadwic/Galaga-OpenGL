@@ -10,8 +10,6 @@ public class EventListener implements GLEventListener {
 
     public static GL2 gl = null;
 
-    public static float x = -5;
-
     @Override
     public void init(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
@@ -29,11 +27,21 @@ public class EventListener implements GLEventListener {
         gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
+        // testing ortho setup
         Graphics.setColor(0,1,0,1);
-        Graphics.fillRect(-.5f, -.5f,1,1);
+        Graphics.fillRect(-4.5f, 0,1,1);
+        Graphics.fillRect(4.5f, 0,1,1);
+        Graphics.fillRect(-1, 0,1,1);
+        Graphics.fillRect(1, 0,1,1);
+        Graphics.fillRect(-2.5f, 0,1,1);
+        Graphics.fillRect(2.5f, 0,1,1);
+        Graphics.fillRect(0, 1,1,1);
+        Graphics.fillRect(0, -1,1,1);
+        Graphics.fillRect(0, 2,1,1);
+        Graphics.fillRect(0, -2,1,1);
 
         // Graphics tester
-        /*for (int i = 0; i < 1000; i++){
+        /*for (int i = 0; i < 10; i++){
             Random random = new Random();
 
             float x = (random.nextFloat()*10) - 5;
