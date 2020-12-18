@@ -29,13 +29,13 @@ public class Graphics {
 
         /*gl.glColor4f(red, green, blue, alpha);*/
         gl.glBegin(GL2.GL_QUADS);
-        gl.glTexCoord2d(0,0);
-        gl.glVertex2f(-width / 2, -height / 2);
-        gl.glTexCoord2d(1,0);
-        gl.glVertex2f(width / 2, -height / 2);
-        gl.glTexCoord2d(1,1);
-        gl.glVertex2f(width / 2, height / 2);
         gl.glTexCoord2d(0,1);
+        gl.glVertex2f(-width / 2, -height / 2);
+        gl.glTexCoord2d(1,1);
+        gl.glVertex2f(width / 2, -height / 2);
+        gl.glTexCoord2d(1,0);
+        gl.glVertex2f(width / 2, height / 2);
+        gl.glTexCoord2d(0,0);
         gl.glVertex2f(-width / 2, height / 2);
         gl.glEnd();
         gl.glFlush();
