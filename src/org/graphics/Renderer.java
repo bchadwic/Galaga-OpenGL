@@ -10,13 +10,14 @@ import org.input.MouseInput;
 public class Renderer {
 
     private static GLWindow window = null;
+    private static GLProfile profile = null;
     public static int screenWidth = 640;
     public static int screenHeight = 360;
     public  static float unitsWide = 10;
 
     public static void init() {
         GLProfile.initSingleton();
-        GLProfile profile = GLProfile.get(GLProfile.GL2);
+        profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities caps = new GLCapabilities(profile);
 
         window = GLWindow.create(caps);
@@ -44,6 +45,10 @@ public class Renderer {
 
     public static int getScreenHeight(){
         return window.getHeight();
+    }
+
+    public static GLProfile getProfile(){
+        return profile;
     }
 
     public static void main(String[] args) {

@@ -3,19 +3,24 @@ package org.graphics;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
+import org.resource.ImageResource;
 
 import java.util.Random;
 
 public class EventListener implements GLEventListener {
 
     public static GL2 gl = null;
-    float x = 0.01f;
-    float y = 0.01f;
+    public static ImageResource image = null;
+    float dx = 0.01f;
+    float dy = 0.01f;
 
     @Override
     public void init(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
+        gl.glEnable(GL2.GL_TEXTURE_2D);
+        image = new ImageResource("/res/ship.png");
+
 
     }
 
@@ -54,15 +59,21 @@ public class EventListener implements GLEventListener {
 
         }*/
 
-        gl.glBegin(GL2.GL_POINTS);
+        // Moving circle
+        /*gl.glBegin(GL2.GL_POINTS);
         for(int i=0;i<1000;++i)
         {
             gl.glVertex3f((float)Math.cos(2*Math.PI*i/1000.0),(float) Math.sin(2*Math.PI*i/1000.0),0);
         }
         gl.glEnd();
 
-        gl.glTranslatef(x,y,0);
+        gl.glTranslatef(x,y,0);*/
 
+        /*Graphics.setColor(0,1,0,1);
+        Graphics.fillRect(0, 0,1,1);*/
+        /*gl.glTranslatef(dx,dy,0);*/
+
+        Graphics.drawImage(image,0,0,1,1);
 
     }
 
