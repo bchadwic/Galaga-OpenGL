@@ -29,14 +29,21 @@ public class Renderer {
 
 
 
-        FPSAnimator animator = new FPSAnimator(window, 60);
-        animator.start();
+        /*FPSAnimator animator = new FPSAnimator(window, 60);
+        animator.start();*/
 
         window.setFullscreen(false);
         window.setVisible(true);
         window.requestFocus();
         window.setResizable(true);
 
+    }
+
+    public static void render(){
+        if(window == null){
+            return;
+        }
+        window.display();
     }
 
     public static int getScreenWidth(){
@@ -51,7 +58,4 @@ public class Renderer {
         return profile;
     }
 
-    public static void main(String[] args) {
-        init();
-    }
 }
