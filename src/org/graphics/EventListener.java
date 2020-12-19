@@ -75,6 +75,7 @@ public class EventListener implements GLEventListener {
         /*gl.glTranslatef(dx,dy,0);*/
 
         Graphics.drawImage(image,0,0,1,1);
+        /*Graphics.fillRect(1,2,2,1);*/
 
     }
 

@@ -48,7 +48,7 @@ public class Graphics {
 
     public static void fillRect(float x, float y, float width, float height){
         GL2 gl = EventListener.gl;
-
+        setColor(0,100,100,0);
         gl.glTranslatef(x,y,0);
         gl.glRotatef(rotation,0,0,1);
 
