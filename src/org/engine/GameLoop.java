@@ -12,7 +12,7 @@ public class GameLoop {
 
     private static long lastUpdateTime = 0;
 
-    private static int targetFPS = 30;
+    private static int targetFPS = 50;
     private static int targetTime = 1000000000 / targetFPS;
 
     public static void start(){
@@ -42,7 +42,7 @@ public class GameLoop {
 
                 fps++;
                 if(System.nanoTime() >= lastFpsCheck + 1000000000){
-                    System.out.println(fps);
+                    /*System.out.println(fps);*/
                     fps = 0;
                     lastFpsCheck = System.nanoTime();
                 }

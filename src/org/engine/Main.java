@@ -1,6 +1,8 @@
 package org.engine;
 
 import org.graphics.Renderer;
+import org.test.TestPlayer;
+import org.world.World;
 
 public class Main {
 
@@ -8,6 +10,9 @@ public class Main {
 
         Renderer.init();
         GameLoop.start();
+
+        // Test
+        World.addObject(new TestPlayer());
 
     }
 

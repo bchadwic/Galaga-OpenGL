@@ -28,7 +28,6 @@ public class Renderer {
         window.addKeyListener(new KeyInput());
 
 
-
         /*FPSAnimator animator = new FPSAnimator(window, 60);
         animator.start();*/
 

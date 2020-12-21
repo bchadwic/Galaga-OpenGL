@@ -17,16 +17,13 @@ public class KeyInput implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeySymbol() == 32)
+            System.exit(0);
+        System.out.println(e.getKeySymbol());
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (e.getKeySymbol() == 27)
-            System.exit(0);
-        if (e.getKeySymbol() == 32){
-            System.out.println(e.getKeySymbol());
 
-        }
     }
 }

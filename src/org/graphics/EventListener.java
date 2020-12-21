@@ -20,8 +20,7 @@ public class EventListener implements GLEventListener {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClearColor(0,0,0,1);
         gl.glEnable(GL2.GL_TEXTURE_2D);
-
-        image = new ImageResource("/res/ship.png");
+        gl.setSwapInterval(0);
 
 
     }
