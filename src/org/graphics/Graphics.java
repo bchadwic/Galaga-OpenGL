@@ -12,10 +12,11 @@ public class Graphics {
     private static float blue = 0;
     private static float alpha = 1;
 
-    private static float rotation = .5f;
+    private static float rotation = 30;
+    private static GL2 gl = EventListener.gl;
 
     public static void drawImage(ImageResource image, float x, float y, float width, float height){
-        GL2 gl = EventListener.gl;
+
 
         Texture tex = image.getTexture();
 
@@ -24,7 +25,7 @@ public class Graphics {
         }
 
         gl.glTranslatef(x,y,0);
-        gl.glRotatef(rotation,0,0,1);
+
 
 
         /*gl.glColor4f(red, green, blue, alpha);*/
