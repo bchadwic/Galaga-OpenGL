@@ -5,13 +5,9 @@ import org.resource.ImageResource;
 public class Animation {
 
     public ImageResource[] frames;
-
     private int currentFrame = 0;
-
     public int fps = 3;
     private long lastFrameTime = 0;
-
-    // Should we loop
     public boolean loop = true;
 
     public void play(){

@@ -7,12 +7,14 @@ import com.jogamp.opengl.util.FPSAnimator;
 import org.input.KeyInput;
 import org.input.MouseInput;
 
+import java.awt.*;
+
 public class Renderer {
 
     private static GLWindow window = null;
     private static GLProfile profile = null;
-    public static int screenWidth = 640;
-    public static int screenHeight = 360;
+    public static int screenWidth = 480;
+    public static int screenHeight = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight() * .8);
     public  static float unitsWide = 10;
 
     public static void init() {
@@ -34,7 +36,7 @@ public class Renderer {
         window.setFullscreen(false);
         window.setVisible(true);
         window.requestFocus();
-        window.setResizable(true);
+        window.setResizable(false);
 
     }
 

@@ -12,7 +12,7 @@ public class GameLoop {
 
     private static long lastUpdateTime = 0;
 
-    private static int targetFPS = 50;
+    private static int targetFPS = 60;
     private static int targetTime = 1000000000 / targetFPS;
 
     public static void start(){
@@ -75,5 +75,9 @@ public class GameLoop {
 
         thread.setName("GameLoop");
         thread.start();
+    }
+
+    public static float updateDelta(){
+        return 1.0f / 1000000000 * targetTime;
     }
 }

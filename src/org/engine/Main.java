@@ -1,7 +1,7 @@
 package org.engine;
 
 import org.graphics.Renderer;
-import org.test.TestPlayer;
+import org.player.PlayerShip;
 import org.world.World;
 
 public class Main {
@@ -12,7 +12,7 @@ public class Main {
         GameLoop.start();
 
         // Test
-        World.addObject(new TestPlayer());
+        World.addObject(new PlayerShip());
 
     }
 
