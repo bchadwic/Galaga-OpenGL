@@ -2,7 +2,8 @@ package org.engine;
 
 import org.graphics.Renderer;
 import org.player.PlayerShip;
-import org.world.World;
+import org.target.Enemy;
+import org.world.Space;
 
 public class Main {
 
@@ -12,7 +13,8 @@ public class Main {
         GameLoop.start();
 
         // Test
-        World.addObject(new PlayerShip());
+        Space.addObject(new PlayerShip());
+        Space.addObject(new Enemy());
 
     }
 

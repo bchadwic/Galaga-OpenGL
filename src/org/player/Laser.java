@@ -3,7 +3,7 @@ package org.player;
 import org.engine.GameLoop;
 import org.graphics.Graphics;
 import org.world.GameObject;
-import org.world.World;
+import org.world.Space;
 
 public class Laser extends GameObject {
 
@@ -12,8 +12,7 @@ public class Laser extends GameObject {
     public Laser(float x){
         this.x = x;
         y = START_Y;
-        System.out.println("making a bullet at "+x);
-        World.addObject(this);
+        Space.addObject(this);
     }
 
     public void update(){

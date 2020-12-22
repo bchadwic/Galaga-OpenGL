@@ -19,10 +19,9 @@ public class PlayerShip extends GameObject {
         x = 0;
         y = -4;
 
-        width = 1.5f;
-        height = 1.5f;
+        width = 1.2f;
+        height = 1.2f;
 
-        animations = new Animation[1];
         animations[0] = new Animation();
         animations[0].frames = new ImageResource[5];
         animations[0].frames[0] = new ImageResource("/res/ship.png");
@@ -55,7 +54,7 @@ public class PlayerShip extends GameObject {
     }
 
     public void render(){
-        Graphics.drawImage(animations[currentAnimation].getImage(), x, y, width, height);
+        Graphics.drawImage(animations[shipSprite].getImage(), x, y, width, height);
     }
 
     public void shoot(){

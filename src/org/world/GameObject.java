@@ -8,13 +8,15 @@ public class GameObject {
     public float x;
     public float y;
 
-    public float width;
-    public float height;
+    public float width = 1;
+    public float height = 1;
 
     public float rotation = 0;
 
-    public Animation[] animations;
-    public int currentAnimation = 0;
+    public Animation[] animations = new Animation[2];
+    public int shipSprite = 0;
+    public int enemySprite = 1;
+
 
     public int speed = 5;
 

@@ -4,9 +4,7 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import org.resource.ImageResource;
-import org.world.World;
-
-import java.util.Random;
+import org.world.Space;
 
 public class EventListener implements GLEventListener {
 
@@ -34,7 +32,7 @@ public class EventListener implements GLEventListener {
     public void display(GLAutoDrawable drawable) {
         gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-        World.render();
+        Space.render();
 
         // testing ortho setup
         /*Graphics.setColor(0,1,0,1);

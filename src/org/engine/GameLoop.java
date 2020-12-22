@@ -1,7 +1,7 @@
 package org.engine;
 
 import org.graphics.Renderer;
-import org.world.World;
+import org.world.Space;
 
 public class GameLoop {
 
@@ -29,7 +29,7 @@ public class GameLoop {
                 updates = 0;
 
                 while (currentTime - lastUpdateTime >= targetTime){
-                    World.update();
+                    Space.update();
                     lastUpdateTime += targetTime;
                     updates++;
 

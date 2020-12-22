@@ -4,7 +4,7 @@ import org.graphics.Graphics;
 
 import java.util.ArrayList;
 
-public class World {
+public class Space {
 
     private static ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
     private static ArrayList<GameObject> newObjects = new ArrayList<GameObject>();
@@ -12,11 +12,12 @@ public class World {
 
     // Go through all objects and update them
     public static void update(){
+        // Game object memory tester
         System.out.println("gameObjects: "+gameObjects.size());
 
         for(GameObject go: gameObjects){
             go.update();
-            if(go.y > 7){
+            if(go.y > 6){
                 removeIndex = gameObjects.indexOf(go);
             }
         }
@@ -30,9 +31,6 @@ public class World {
             gameObjects.add(newObjects.get(0));
             newObjects.remove(newObjects.get(0));
         }
-
-
-
 
 
     }
