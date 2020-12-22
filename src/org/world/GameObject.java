@@ -17,6 +17,7 @@ public class GameObject {
     public int shipSprite = 0;
     public int enemySprite = 1;
 
+    private boolean isAlive = true;
 
     public int speed = 5;
 
@@ -33,4 +34,19 @@ public class GameObject {
         /*Graphics.setRotation(0);*/
     }
 
+    public void setAlive(boolean alive){
+        isAlive = false;
+    }
+
+    public boolean isAlive(){
+        return isAlive;
+    }
+
+    public void explode(){
+
+    }
+
+    public void shot(){
+
+    }
 }

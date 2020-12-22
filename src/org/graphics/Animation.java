@@ -5,10 +5,10 @@ import org.resource.ImageResource;
 public class Animation {
 
     public ImageResource[] frames;
-    private int currentFrame = 0;
-    public int fps = 3;
+    public int currentFrame = 0;
+    public int fps = 15;
     private long lastFrameTime = 0;
-    public boolean loop = true;
+    public boolean loop = false;
 
     public void play(){
         long currentTime = System.nanoTime();

@@ -13,8 +13,15 @@ public class Main {
         GameLoop.start();
 
         // Test
-        Space.addObject(new PlayerShip());
-        Space.addObject(new Enemy());
+        Space.addPlayerObject(new PlayerShip());
+
+        for(int row=3; row<=5; row++){
+            for(int col=-3; col<=3; col++){
+                Space.addEnemyObject(new Enemy(col,row));
+            }
+        }
+
+        /*Space.addEnemyObject(new Enemy(0,5));*/
 
     }
 

@@ -35,15 +35,15 @@ public class PlayerShip extends GameObject {
     public void update() {
         float xInput = 0;
 
-        if (KeyInput.getKey(KeyEvent.VK_LEFT) && x > -4.5)
+        if (KeyInput.getKey(KeyEvent.VK_LEFT) && x >= -4.5)
             xInput--;
 
-        if(KeyInput.getKey(KeyEvent.VK_RIGHT) && x < 4.5)
+        if(KeyInput.getKey(KeyEvent.VK_RIGHT) && x <= 4.5)
             xInput++;
 
         if(KeyInput.getKey(KeyEvent.VK_S) && !heldShot) {
-            heldShot = true;
-            shoot();
+                heldShot = true;
+                shoot();
         }
 
         if(!KeyInput.getKey(KeyEvent.VK_S))
