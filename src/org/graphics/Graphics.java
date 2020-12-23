@@ -1,8 +1,11 @@
 package org.graphics;
 
 import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.util.awt.TextRenderer;
 import com.jogamp.opengl.util.texture.Texture;
 import org.resource.ImageResource;
+
+import java.awt.*;
 
 public class Graphics {
 
@@ -14,6 +17,7 @@ public class Graphics {
 
     private static float rotation = 0;
     private static GL2 gl = EventListener.gl;
+    private static TextRenderer renderer;
 
     public static void drawImage(ImageResource image, float x, float y, float width, float height){
 
@@ -73,6 +77,16 @@ public class Graphics {
         green = Math.max(0, Math.min(1, g));
         blue = Math.max(0, Math.min(1, b));
         alpha = Math.max(0, Math.min(1, a));
+    }
+
+    public static void printText(){
+        renderer = new TextRenderer(new Font("SansSerif", Font.BOLD, 12));
+        renderer.beginRendering(50, 50);
+        // optionally set the color
+        renderer.setColor(1.0f, 0.2f, 0.2f, 0.8f);
+        renderer.draw("Text to draw", 0, 0);
+        // ... more draw commands, color changes, etc.
+        renderer.endRendering();
     }
 
     public static void setRotation(float r){

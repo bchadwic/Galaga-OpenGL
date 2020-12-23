@@ -4,6 +4,7 @@ import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.util.FPSAnimator;
+import com.jogamp.opengl.util.awt.TextRenderer;
 import org.input.KeyInput;
 import org.input.MouseInput;
 
@@ -14,8 +15,9 @@ public class Renderer {
     private static GLWindow window = null;
     private static GLProfile profile = null;
     public static int screenWidth = 480;
-    public static int screenHeight = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight() * .8);
-    public  static float unitsWide = 10;
+    public static int screenHeight = /*(int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight() * .8);*/ 580;
+    public static float unitsWide = 10;
+
 
     public static void init() {
         GLProfile.initSingleton();

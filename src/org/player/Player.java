@@ -8,27 +8,25 @@ import org.input.KeyInput;
 import org.resource.ImageResource;
 import org.world.GameObject;
 
-import java.security.Key;
-import java.util.ArrayList;
-
-public class PlayerShip extends GameObject {
+public class Player extends GameObject {
 
     private boolean heldShot = false;
+    private final int SPEED = 5;
 
-    public PlayerShip(){
+    public Player(){
         x = 0;
         y = -4;
 
         width = 1.2f;
         height = 1.2f;
 
-        animations[0] = new Animation();
-        animations[0].frames = new ImageResource[5];
-        animations[0].frames[0] = new ImageResource("/res/ship.png");
-        animations[0].frames[1] = new ImageResource("/res/ex_1.png");
-        animations[0].frames[2] = new ImageResource("/res/ex_2.png");
-        animations[0].frames[3] = new ImageResource("/res/ex_3.png");
-        animations[0].frames[4] = new ImageResource("/res/ex_4.png");
+        animations[SHIP_SPRITE] = new Animation();
+        animations[SHIP_SPRITE].frames = new ImageResource[5];
+        animations[SHIP_SPRITE].frames[0] = new ImageResource("/res/ship.png");
+        animations[SHIP_SPRITE].frames[1] = new ImageResource("/res/ex_1.png");
+        animations[SHIP_SPRITE].frames[2] = new ImageResource("/res/ex_2.png");
+        animations[SHIP_SPRITE].frames[3] = new ImageResource("/res/ex_3.png");
+        animations[SHIP_SPRITE].frames[4] = new ImageResource("/res/ex_4.png");
 
     }
 
@@ -49,12 +47,12 @@ public class PlayerShip extends GameObject {
         if(!KeyInput.getKey(KeyEvent.VK_S))
             heldShot = false;
 
-        x += xInput * speed * GameLoop.updateDelta();
+        x += xInput * SPEED * GameLoop.updateDelta();
 
     }
 
     public void render(){
-        Graphics.drawImage(animations[shipSprite].getImage(), x, y, width, height);
+        Graphics.drawImage(animations[SHIP_SPRITE].getImage(), x, y, width, height);
     }
 
     public void shoot(){

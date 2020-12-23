@@ -6,9 +6,9 @@ public class Animation {
 
     public ImageResource[] frames;
     public int currentFrame = 0;
-    public int fps = 15;
+    public float fps = 20;
     private long lastFrameTime = 0;
-    public boolean loop = false;
+    public boolean loop = true;
 
     public void play(){
         long currentTime = System.nanoTime();
@@ -29,5 +29,13 @@ public class Animation {
 
     public ImageResource getImage() {
         return frames[currentFrame];
+    }
+
+    public void setLoop(boolean loop){
+        this.loop = loop;
+    }
+
+    public void setFps(float fps){
+        this.fps = fps;
     }
 }

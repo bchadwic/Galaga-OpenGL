@@ -8,22 +8,22 @@ import org.world.Space;
 
 public class Laser extends GameObject {
 
-    private final float START_Y = -3.4f;
+    private final int SPEED = 5;
 
     public Laser(float x){
         this.x = x;
-        y = START_Y;
+        y = -3.4f;
         Space.addPlayerObject(this);
     }
 
     public void update(){
-        for(GameObject enemy : Space.getEnemies()) {
+        for(Enemy enemy : Space.getEnemies()) {
             if (((this.x > enemy.x-.5f)&&(this.x < enemy.x+.5f)) && ((this.y > enemy.y-.2f) && (this.y < enemy.y+.2f))){
                 enemy.shot();
                 this.y = 7;
             }
         }
-        y += speed * GameLoop.updateDelta();
+        y += SPEED * GameLoop.updateDelta();
     }
 
     public void render(){

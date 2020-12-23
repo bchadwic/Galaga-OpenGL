@@ -55,21 +55,6 @@ public class GameLoop {
                         e.printStackTrace();
                     }
                 }
-                /*long startTime = System.nanoTime();
-                // Poll input
-                // Update Game
-
-                Renderer.render();
-
-                long timeTaken = System.nanoTime() - startTime;
-                if(timeTaken < targetTime){
-                    try {
-                        Thread.sleep((targetTime - timeTaken) / 1000000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                }*/
             }
         });
 
