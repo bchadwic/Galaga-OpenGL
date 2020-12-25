@@ -14,17 +14,17 @@ public class Enemy extends GameObject {
     private float endY;
     private boolean isAlive = true;
 
-    public Enemy(float x, float y){
+    public Enemy(float x, float y, int delay){
 
-        this.x = x;
-        this.y = y;
-        /*endX = x;
+        /*this.x = x;
+        this.y = y;*/
+        endX = x;
         endY = y;
         if(x > 0)
-            x = 6;
+            this.x = -7 - delay;
         else
-            x = -6;
-        y = -2;*/
+            this.x = 7 + delay;
+        this.y = -2 - delay;
 
         width = .8f;
         height = .8f;
@@ -46,22 +46,20 @@ public class Enemy extends GameObject {
 
     @Override
     public void update() {
-/*
         if(startPath) {
-            if (x < endX)
-                x+=.01f;
-            else if (x > endX)
-                x-=.01f;
-            else
-                startPath = false;
-
-            if (y < endY){
-                y+=.01f;
-                startPath = true;
+            if (x < endX - .03f)
+//                x = (float)Math.pow(.001, -x);
+                x+=.06f;
+            else if (x > endX + .03f)
+//                x = (float)Math.pow(.001, x);
+                x-=.06f;
+            if (y < endY)
+//                y = (float)Math.pow(.001,y);
+                y+=.04f;
+            /*    startPath = true;
             } else
-                startPath = false;
-        }
-*/
+                startPath = false;*/
+            }
     }
 
     @Override

@@ -2,13 +2,15 @@ package org.player;
 
 import org.engine.GameLoop;
 import org.graphics.Graphics;
+import org.resource.ImageResource;
 import org.target.Enemy;
 import org.world.GameObject;
 import org.world.Space;
 
 public class Laser extends GameObject {
 
-    private final int SPEED = 5;
+    private final int SPEED = 10;
+    ImageResource laser = new ImageResource("/res/laser.png");
 
     public Laser(float x){
         this.x = x;
@@ -27,7 +29,7 @@ public class Laser extends GameObject {
     }
 
     public void render(){
-        Graphics.fillRect(x,y,.1f,.15f);
+        Graphics.drawImage(laser,x,y,.15f,.4f);
     }
 
 
