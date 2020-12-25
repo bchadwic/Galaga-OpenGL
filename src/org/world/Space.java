@@ -55,6 +55,11 @@ public class Space {
             BACKGROUND_OBJECTS.addAll(NEW_BACKGROUND_OBJECTS);
             NEW_BACKGROUND_OBJECTS.clear();
         }
+        // if there is a text object to be added, add the text object to the background object list
+        if(!NEW_TEXT_OBJECTS.isEmpty()) {
+            TEXT_OBJECTS.addAll(NEW_TEXT_OBJECTS);
+            NEW_TEXT_OBJECTS.clear();
+        }
 
         // *INDEXING OBJECTS TO BE DEREFERENCE*
 
@@ -72,12 +77,18 @@ public class Space {
             if(!obj.isAlive())
                 removeEnemyObject = ENEMY_OBJECTS.indexOf(obj);
         }
+
         for(Text obj: TEXT_OBJECTS){
             obj.update();
             // if enemy isn't alive, dereference the object
             if(!obj.isSet())
                 removeTextObject = TEXT_OBJECTS.indexOf(obj);
         }
+
+        for(Background obj: BACKGROUND_OBJECTS){
+            obj.update();
+        }
+
 
         // *GAME OBJECT DEREFERENCE*
 

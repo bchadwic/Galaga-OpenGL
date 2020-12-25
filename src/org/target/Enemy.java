@@ -31,6 +31,7 @@ public class Enemy extends GameObject {
 
         animations[ENEMY_SPRITE] = new Animation();
         animations[ENEMY_SPRITE].setLoop(false);
+        animations[ENEMY_SPRITE].setFps(50);
         animations[ENEMY_SPRITE].frames = new ImageResource[7];
         animations[ENEMY_SPRITE].frames[0] = new ImageResource("/res/bu_d.png");
         animations[ENEMY_SPRITE].frames[1] = new ImageResource("/res/en_ex_1.png");

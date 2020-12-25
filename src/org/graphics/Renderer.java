@@ -1,10 +1,9 @@
 package org.graphics;
 
+import com.jogamp.nativewindow.WindowClosingProtocol;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
-import com.jogamp.opengl.util.FPSAnimator;
-import com.jogamp.opengl.util.awt.TextRenderer;
 import org.input.KeyInput;
 import org.input.MouseInput;
 
@@ -14,8 +13,10 @@ public class Renderer {
 
     private static GLWindow window = null;
     private static GLProfile profile = null;
-    public static int screenWidth = 480;
-    public static int screenHeight = /*(int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight() * .8);*/ 580;
+    public static int windowWidth = (int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth());
+    public static int windowHeight = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+    public static int displayWidth = 480;
+    public static int displayHeight = 580;
     public static float unitsWide = 10;
 
 
@@ -25,13 +26,16 @@ public class Renderer {
         GLCapabilities caps = new GLCapabilities(profile);
 
         window = GLWindow.create(caps);
-        window.setSize(screenWidth, screenHeight);
+        window.setSize(displayWidth, displayHeight);
 
         window.addGLEventListener(new EventListener());
         window.addMouseListener(new MouseInput());
         window.addKeyListener(new KeyInput());
-
-
+        /*window.setProperty("jnlp.newt.window.icons", "/res/ship.png");*/
+        window.setTitle("Galaga");
+        window.setPosition((int)(windowWidth * .3),(int)(windowHeight * .1));
+        window.setDefaultCloseOperation(WindowClosingProtocol.WindowClosingMode.DISPOSE_ON_CLOSE);
+        window.setUndecorated(true);
         /*FPSAnimator animator = new FPSAnimator(window, 60);
         animator.start();*/
 
@@ -49,11 +53,11 @@ public class Renderer {
         window.display();
     }
 
-    public static int getScreenWidth(){
+    public static int getDisplayWidth(){
         return window.getWidth();
     }
 
-    public static int getScreenHeight(){
+    public static int getDisplayHeight(){
         return window.getHeight();
     }
 

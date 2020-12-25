@@ -19,8 +19,6 @@ public class KeyInput implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeySymbol() == 32)
-            System.exit(0);
         if(0 == (InputEvent.AUTOREPEAT_MASK & e.getModifiers()))
         { keys[e.getKeyCode()] = true;}
     }

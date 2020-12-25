@@ -39,12 +39,12 @@ public class Player extends GameObject {
         if(KeyInput.getKey(KeyEvent.VK_RIGHT) && x <= 4.5)
             xInput++;
 
-        if(KeyInput.getKey(KeyEvent.VK_S) && !heldShot) {
+        if(KeyInput.getKey(KeyEvent.VK_SPACE) && !heldShot) {
                 heldShot = true;
                 shoot();
         }
 
-        if(!KeyInput.getKey(KeyEvent.VK_S))
+        if(!KeyInput.getKey(KeyEvent.VK_SPACE))
             heldShot = false;
 
         x += xInput * SPEED * GameLoop.updateDelta();

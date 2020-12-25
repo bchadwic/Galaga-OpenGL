@@ -32,7 +32,7 @@ public class Graphics {
 
 
 
-        gl.glColor4f(red, green, blue, alpha);
+        /*gl.glColor4f(red, green, blue, alpha);*/
         gl.glBegin(GL2.GL_QUADS);
         gl.glTexCoord2d(0,1);
         gl.glVertex2f(-width / 2, -height / 2);
@@ -73,10 +73,10 @@ public class Graphics {
     }
 
     public static void setColor(float r, float g, float b, float a){
-        red = Math.max(0, Math.min(1, r));
-        green = Math.max(0, Math.min(1, g));
-        blue = Math.max(0, Math.min(1, b));
-        alpha = Math.max(0, Math.min(1, a));
+        red = Math.max(0, Math.min(255, r));
+        green = Math.max(0, Math.min(255, g));
+        blue = Math.max(0, Math.min(255, b));
+        alpha = Math.max(0, Math.min(255, a));
     }
 
     public static void printText(){
@@ -92,5 +92,26 @@ public class Graphics {
     public static void setRotation(float r){
         rotation = r;
     }
+
+    public static void drawStar(float x, float y, float width, float height){
+        GL2 gl = EventListener.gl;
+
+        gl.glTranslatef(x,y,0);
+        gl.glRotatef(rotation,0,0,1);
+
+        gl.glColor4f(red, green, blue, alpha);
+        gl.glBegin(GL2.GL_QUADS);
+        gl.glVertex2f(-width / 2, -height / 2);
+        gl.glVertex2f(width / 2, -height / 2);
+        gl.glVertex2f(width / 2, height / 2);
+        gl.glVertex2f(-width / 2, height / 2);
+        gl.glEnd();
+        gl.glFlush();
+
+        gl.glRotatef(-rotation, 0,0,1);
+        gl.glTranslatef(-x,-y,0);
+
+    }
+
 
 }
